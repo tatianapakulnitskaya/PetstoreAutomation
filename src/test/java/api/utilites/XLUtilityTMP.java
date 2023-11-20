@@ -27,6 +27,7 @@ public class XLUtilityTMP {
         workbook = new XSSFWorkbook(fi);
         sheet = workbook.getSheet(sheetName);
         int rowcount = sheet.getLastRowNum();
+
         workbook.close();
         fi.close();
         return rowcount;
@@ -36,8 +37,9 @@ public class XLUtilityTMP {
         fi = new FileInputStream(path);
         workbook = new XSSFWorkbook(fi);
         sheet = workbook.getSheet(sheetName);
-        row=sheet.getRow(rownum);
+        row = sheet.getRow(rownum);
         int cellcount = row.getLastCellNum();
+        System.out.println(cellcount);
         workbook.close();
         fi.close();
         return cellcount;
